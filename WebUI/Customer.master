@@ -1,0 +1,67 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Customer.master.cs" Inherits="Customer" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style>
+        .txt {
+            width:70%;height:37px;border:1px solid white;background-color:#eeeeea
+        }
+        .Button1 {
+             width:100%;height:37px;border:1px solid white;background-color:#eeeeea
+        }
+         .Button2 {
+             width:40%;height:37px;border:1px solid #808080;background-color:#eeeeea
+        }
+        a {
+            text-decoration:none
+        }
+        .GridView {
+             width:100%;height:37px;border:1px solid white;background-color:#eeeeea
+        }
+    </style>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div style="width:2%;height:400px;background-color:#000000;float:left">
+
+    </div>
+    <div style="width:13%;height:400px;float:left"><br /><br />
+          <b style="color:#808080;font-size:40px;">Speciality</b><br /><br />
+          <b style="color:#808080;font-size:19px;">农家特产销售网站</b>
+    </div>
+    <div style="width:85%;height:400px;float:left">
+        <div style="width:75%; height:50px;margin-top:10px;text-align:center;line-height:54px; margin-left: auto; margin-right: auto; margin-bottom: 0;">
+            <a href="CustomerDefault.aspx" style="margin-left:45px;"><span style="color:#000000;font-size:14px;">首页</span></a> <a href="SelectSpeciality1.aspx" style="margin-left:45px;"><span style="color:#000000;font-size:14px;">价格高到低查询</span></a> <a href="SelectSpeciality2.aspx" style="margin-left:45px;"><span style="color:#000000;font-size:14px;">销量高到低查询</span></a> <a href="CustomerSelectCart.aspx" style="margin-left:45px;"><span style="color:#000000;font-size:14px;">购物车</span></a> <a href="CustomerSelectOrderDetail.aspx" style="margin-left:45px;"><span style="color:#000000;font-size:14px;">购买记录</span></a> <a href="CustomerSelectCollect.aspx" style="margin-left:45px;"><span style="color:#000000;font-size:14px;">收藏中心</span></a> <a href="UpdateProfile.aspx" style="margin-left:45px;"><span style="color:#000000;font-size:14px;">个人中心</span></a> <a href="Login.aspx" style="margin-left:45px;"><span style="color:#000000;font-size:14px;">登录</span></a>
+            <a href="Applicationaccount.aspx" style="margin-left:45px;"><span style="color:#000000;font-size:14px;">注册</span></a>
+        </div>
+        <asp:Image ID="Image1" runat="server" ImageUrl="~/Photo/photo2.png"  Height="350px" Width="95%" />
+    </div>
+    <div style="clear:left"></div>
+    <table>
+        <tr>
+            <td  style="width:95%">
+                <asp:DataList ID="DataList1" runat="server" RepeatColumns="20"  >
+                     <ItemTemplate>
+                         <a href='SelectSpeciality.aspx?tid=<%# Eval("tid") %>'>
+                              <span style="color:#808080;font-size:14px;margin-left:10px;"><%# Eval("tname") %></span>/
+                          </a>
+                      </ItemTemplate>
+                   </asp:DataList>
+            </td>
+        </tr>
+    </table>
+        
+         <div style="width:100%;margin:0 auto">
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

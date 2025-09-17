@@ -1,0 +1,77 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Admin.master.cs" Inherits="Admin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <style>
+        .txt {
+            width:70%;height:37px;border:1px solid white;background-color:#eeeeea
+        }
+        .Button1 {
+             width:100%;height:37px;border:1px solid white;background-color:#eeeeea
+        }
+         .Button2 {
+             width:40%;height:37px;border:1px solid #808080;background-color:#eeeeea
+        }
+        a {
+            text-decoration:none
+        }
+        .GridView {
+             width:100%;height:37px;border:1px solid white;background-color:#eeeeea
+        }
+    </style>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <table style="width:100%;border-bottom:1px solid #ebc217;height:56px">
+        <tr>
+            <td style="width:18%;border-right:1px solid #ebc217">
+                 <b style="color:#808080;font-size:20px;">Speciality</b>
+                <b style="color:#808080;font-size:19px;">农家特产销售网站</b>
+            </td>
+             <td style="width:18%;border-right:1px solid #ebc217;text-align:center">
+               
+                <a href="AdminDefault.aspx"><b style="color:#808080;font-size:19px;">后台首页</b></a>&nbsp;&nbsp;&nbsp;
+                 <a href="CustomerDefault.aspx"><b style="color:#808080;font-size:19px;">退出</b></a>
+            </td>
+            <td style="width:64%;text-align:center">
+                <span style="color:#808080;font-size:15px;">
+                    管理员账户：<asp:Label ID="Label1" runat="server"   ForeColor="blue"></asp:Label>
+                </span>
+                 
+            </td>
+        </tr>
+    </table>
+    <div style="width:18%;float:left;text-align:center"><br /><br />
+        <asp:Image ID="Image1" runat="server" ImageUrl="~/Photo/photo.png" Width="65px" Height="65px" style="border-radius:65px" /><br />
+        <span style="color:#808080;font-size:15px;">尊敬的管理员</span>
+        <a href="Login.aspx">请登录</a><br /><br />
+         <asp:Menu ID="Menu1" runat="server" Width="100%" BackColor="#58585d"
+                 Font-Size="15px" ForeColor="White" Orientation="Vertical"
+                StaticSubMenuIndent="10px" >
+                <StaticMenuItemStyle HorizontalPadding="6px" VerticalPadding="18px" />
+                <Items>
+                    <asp:MenuItem Text="修改登录密码"  NavigateUrl="~/UpdateProfile1.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="特产订单管理"  NavigateUrl="~/AdminSelectOrderDetail.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="订单记录管理"  NavigateUrl="~/AdminDeleteOrderDetail.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="用户资料管理"  NavigateUrl="~/AdminSelectCustomer.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="上传特产信息"  NavigateUrl="~/AdminAddSpeciality.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="管理特产信息"  NavigateUrl="~/AdminSelectSpeciality.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="上传特产分类"  NavigateUrl="~/AdminAddTypes.aspx"></asp:MenuItem>
+                    <asp:MenuItem Text="管理特产分类"  NavigateUrl="~/AdminSelectTypes.aspx"></asp:MenuItem>
+                </Items>
+            </asp:Menu> 
+    </div>
+        <div style="width:82%;float:left;min-height:650px">
+             <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+            </asp:ContentPlaceHolder>
+       </div>
+    </form>
+</body>
+</html>
